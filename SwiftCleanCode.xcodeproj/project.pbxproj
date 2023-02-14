@@ -51,9 +51,11 @@
 		752824BA29955E4B005A5B75 /* SwiftCleanCode */ = {
 			isa = PBXGroup;
 			children = (
+				752824CE29956181005A5B75 /* Core */,
+				752824C92995612A005A5B75 /* App */,
 				752824BB29955E4B005A5B75 /* SwiftCleanCodeApp.swift */,
-				752824BD29955E4B005A5B75 /* ContentView.swift */,
-				752824BF29955E4C005A5B75 /* Assets.xcassets */,
+				752824D029956196005A5B75 /* Environments */,
+				752824CF2995618E005A5B75 /* Resources */,
 				752824C129955E4C005A5B75 /* Preview Content */,
 			);
 			path = SwiftCleanCode;
@@ -65,6 +67,68 @@
 				752824C229955E4C005A5B75 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		752824C92995612A005A5B75 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				752824CD29956175005A5B75 /* Flows */,
+				752824CC2995616A005A5B75 /* Assembly */,
+				752824CB29956160005A5B75 /* Entity */,
+				752824CA29956157005A5B75 /* BusinessLogic */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		752824CA29956157005A5B75 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		752824CB29956160005A5B75 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		752824CC2995616A005A5B75 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		752824CD29956175005A5B75 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				752824BD29955E4B005A5B75 /* ContentView.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		752824CE29956181005A5B75 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		752824CF2995618E005A5B75 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				752824BF29955E4C005A5B75 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		752824D029956196005A5B75 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Environments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
