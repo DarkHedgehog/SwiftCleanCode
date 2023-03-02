@@ -1,5 +1,5 @@
 //
-//  LoginResult.swift
+//  RegistrationResult.swift
 //  SwiftCleanCode
 //
 //  Created by Aleksandr Derevenskih on 02.03.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginResult: Codable {
+struct RegistrationResult: Codable {
     let result: Int
-    let user: User
+    let userMessage: String
 }

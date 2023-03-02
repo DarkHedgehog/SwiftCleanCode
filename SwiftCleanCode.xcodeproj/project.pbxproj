@@ -21,6 +21,9 @@
 		7546E14C29B0D73F00C389AE /* AuthRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E14B29B0D73F00C389AE /* AuthRequestFactory.swift */; };
 		7546E14E29B0D77700C389AE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E14D29B0D77700C389AE /* Auth.swift */; };
 		7546E15229B0D92F00C389AE /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E15129B0D92F00C389AE /* RequestFactory.swift */; };
+		7546E15429B0DF9D00C389AE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E15329B0DF9D00C389AE /* Profile.swift */; };
+		7546E15629B0E20B00C389AE /* ProfileRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E15529B0E20B00C389AE /* ProfileRequestFactory.swift */; };
+		7546E15829B0E6B800C389AE /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E15729B0E6B800C389AE /* RegistrationResult.swift */; };
 		75DBC4F9299E3DCC007B82DA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 75DBC4F8299E3DCC007B82DA /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		7546E14B29B0D73F00C389AE /* AuthRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactory.swift; sourceTree = "<group>"; };
 		7546E14D29B0D77700C389AE /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		7546E15129B0D92F00C389AE /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		7546E15329B0DF9D00C389AE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		7546E15529B0E20B00C389AE /* ProfileRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequestFactory.swift; sourceTree = "<group>"; };
+		7546E15729B0E6B800C389AE /* RegistrationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 			children = (
 				7546E14629B0D68500C389AE /* LoginResult.swift */,
 				7546E14829B0D6A000C389AE /* User.swift */,
+				7546E15729B0E6B800C389AE /* RegistrationResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -173,8 +180,10 @@
 			isa = PBXGroup;
 			children = (
 				7546E14B29B0D73F00C389AE /* AuthRequestFactory.swift */,
-				7546E14D29B0D77700C389AE /* Auth.swift */,
+				7546E15529B0E20B00C389AE /* ProfileRequestFactory.swift */,
 				7546E15129B0D92F00C389AE /* RequestFactory.swift */,
+				7546E14D29B0D77700C389AE /* Auth.swift */,
+				7546E15329B0DF9D00C389AE /* Profile.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -282,11 +291,14 @@
 				7546E14C29B0D73F00C389AE /* AuthRequestFactory.swift in Sources */,
 				7546E14529B0D5FA00C389AE /* RequestRouter.swift in Sources */,
 				7546E14129B0D4B800C389AE /* DataRequest.swift in Sources */,
+				7546E15829B0E6B800C389AE /* RegistrationResult.swift in Sources */,
+				7546E15429B0DF9D00C389AE /* Profile.swift in Sources */,
 				7546E14729B0D68500C389AE /* LoginResult.swift in Sources */,
 				7546E14E29B0D77700C389AE /* Auth.swift in Sources */,
 				7546E14929B0D6A000C389AE /* User.swift in Sources */,
 				752824BE29955E4B005A5B75 /* ContentView.swift in Sources */,
 				752824BC29955E4B005A5B75 /* SwiftCleanCodeApp.swift in Sources */,
+				7546E15629B0E20B00C389AE /* ProfileRequestFactory.swift in Sources */,
 				7546E13F29B0D48500C389AE /* ErrorParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
