@@ -37,6 +37,30 @@ extension Profile: ProfileRequestFactory {
     ) {
         let requestModel = Registration(
             baseUrl: baseUrl,
+            idUser: userId,
+            userName: userName,
+            password: password,
+            email: email,
+            gender: gender,
+            creditCard: creditCard,
+            bio: bio
+        )
+
+        self.request(request: requestModel, completionHandler: completionHandler)
+    }
+
+    func edit(
+        userId: Int,
+        userName: String,
+        password: String,
+        email: String,
+        gender: String,
+        creditCard: String,
+        bio: String,
+        completionHandler: @escaping (Alamofire.AFDataResponse<EditProfileResult>) -> Void
+    ) {
+        let requestModel = EditProfile(
+            baseUrl: baseUrl,
             idUser:         userId,
             userName: userName,
             password: password,
@@ -55,6 +79,30 @@ extension Profile {
         let baseUrl: URL
         let method: HTTPMethod = .get
         let path: String = "registerUser.json"
+        let idUser: Int
+        let userName: String
+        let password: String
+        let email: String
+        let gender: String
+        let creditCard: String
+        let bio: String
+        var parameters: Parameters? {
+            return [
+                "id_user": 123,
+                "username": userName,
+                "password": password,
+                "email": email,
+                "gender": gender,
+                "credit_card": creditCard,
+                "bio": bio
+            ]
+        }
+    }
+
+    struct EditProfile: RequestRouter {
+        let baseUrl: URL
+        let method: HTTPMethod = .get
+        let path: String = "changeUserData.json"
         let idUser: Int
         let userName: String
         let password: String
