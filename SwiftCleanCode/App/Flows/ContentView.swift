@@ -31,9 +31,18 @@ struct ContentView: View {
             }
         }
 
+        auth.logout(userId: 123) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
         let profile = requestFactory.makeProfileRequestFatory()
         profile.registration(
-            idUser: 123,
+                    userId: 123,
             userName: "Somebody",
             password: "mypassword",
             email: "some@some.ru",

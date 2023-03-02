@@ -10,7 +10,7 @@ import Alamofire
 
 protocol ProfileRequestFactory {
     func registration(
-        idUser: Int,
+        userId: Int,
         userName: String,
         password: String,
         email: String,

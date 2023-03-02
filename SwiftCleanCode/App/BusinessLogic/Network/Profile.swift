@@ -26,7 +26,7 @@ class Profile: AbstractRequestFactory {
 
 extension Profile: ProfileRequestFactory {
     func registration(
-        idUser: Int,
+        userId: Int,
         userName: String,
         password: String,
         email: String,
@@ -37,7 +37,7 @@ extension Profile: ProfileRequestFactory {
     ) {
         let requestModel = Registration(
             baseUrl: baseUrl,
-            idUser: idUser,
+            idUser:         userId,
             userName: userName,
             password: password,
             email: email,
@@ -67,10 +67,10 @@ extension Profile {
                 "id_user": 123,
                 "username": userName,
                 "password": password,
-                "email" : email,
+                "email": email,
                 "gender": gender,
-                "credit_card" : creditCard,
-                "bio" : bio
+                "credit_card": creditCard,
+                "bio": bio
             ]
         }
     }
