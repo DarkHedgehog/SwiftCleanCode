@@ -43,7 +43,7 @@ final class ResponseCodableTests: XCTestCase {
         errorParser = nil
     }
 
-    func testShouldDownloadAndParse() {
+    func test_shouldDownloadAndParse() {
         let errorParser = ErrorParserStub()
         AF
             .request( URL(string: "https://jsonplaceholder.typicode.com/posts/1")!)
