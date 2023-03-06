@@ -61,7 +61,7 @@ extension Profile: ProfileRequestFactory {
     ) {
         let requestModel = EditProfile(
             baseUrl: baseUrl,
-            idUser:         userId,
+            idUser: userId,
             userName: userName,
             password: password,
             email: email,

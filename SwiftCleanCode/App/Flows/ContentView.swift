@@ -73,6 +73,16 @@ struct ContentView: View {
                 print(error.localizedDescription)
             }
         }
+        let catalogue = requestFactory.makeCatalogueRequestFatory()
+        catalogue.list(pageNumber: 1, categoryId: 1) {
+            response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 struct ContentView_Previews: PreviewProvider {
