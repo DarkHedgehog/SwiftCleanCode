@@ -12,6 +12,10 @@ protocol CatalogueRequestFactory {
     func list(
         pageNumber: Int,
         categoryId: Int,
-        completionHandler: @escaping (Alamofire.AFDataResponse<[Product]>) -> Void
+        completionHandler: @escaping (Alamofire.AFDataResponse<[ProductShort]>) -> Void
+    )
+    func product(
+        id: Int,
+        completionHandler: @escaping (Alamofire.AFDataResponse<ProductDetailResult>) -> Void
     )
 }

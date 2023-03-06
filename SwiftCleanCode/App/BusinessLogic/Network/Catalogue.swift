@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-import Foundation
 import Alamofire
 
 class Catalogue: AbstractRequestFactory {
@@ -30,7 +28,7 @@ extension Catalogue: CatalogueRequestFactory {
     func list(
         pageNumber: Int,
         categoryId: Int,
-        completionHandler: @escaping (Alamofire.AFDataResponse<[Product]>) -> Void
+        completionHandler: @escaping (Alamofire.AFDataResponse<[ProductShort]>) -> Void
     ) {
         let requestModel = CatalogueList(
             baseUrl: baseUrl,
@@ -41,29 +39,10 @@ extension Catalogue: CatalogueRequestFactory {
         self.request(request: requestModel, completionHandler: completionHandler)
     }
 
-//    func edit(
-//        userId: Int,
-//        userName: String,
-//        password: String,
-//        email: String,
-//        gender: String,
-//        creditCard: String,
-//        bio: String,
-//        completionHandler: @escaping (Alamofire.AFDataResponse<EditProfileResult>) -> Void
-//    ) {
-//        let requestModel = EditProfile(
-//            baseUrl: baseUrl,
-//            idUser:         userId,
-//            userName: userName,
-//            password: password,
-//            email: email,
-//            gender: gender,
-//            creditCard: creditCard,
-//            bio: bio
-//        )
-//
-//        self.request(request: requestModel, completionHandler: completionHandler)
-//    }
+    func product(id: Int, completionHandler: @escaping (Alamofire.AFDataResponse<ProductDetailResult>) -> Void) {
+        let requestModel = CatalogueProduct( baseUrl: baseUrl, id: id)
+        self.request(request: requestModel, completionHandler: completionHandler)
+    }
 }
 
 extension Catalogue {
@@ -81,27 +60,15 @@ extension Catalogue {
         }
     }
 
-//    struct EditProfile: RequestRouter {
-//        let baseUrl: URL
-//        let method: HTTPMethod = .get
-//        let path: String = "changeUserData.json"
-//        let idUser: Int
-//        let userName: String
-//        let password: String
-//        let email: String
-//        let gender: String
-//        let creditCard: String
-//        let bio: String
-//        var parameters: Parameters? {
-//            return [
-//                "id_user": 123,
-//                "username": userName,
-//                "password": password,
-//                "email": email,
-//                "gender": gender,
-//                "credit_card": creditCard,
-//                "bio": bio
-//            ]
-//        }
-//    }
+    struct CatalogueProduct: RequestRouter {
+        let baseUrl: URL
+        let method: HTTPMethod = .get
+        let path: String = "getGoodById.json"
+        let id: Int
+        var parameters: Parameters? {
+            return [
+                "id_product": id
+            ]
+        }
+    }
 }

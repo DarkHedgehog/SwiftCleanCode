@@ -12,9 +12,11 @@ final class ProfileTests: XCTestCase {
     let expectation = XCTestExpectation(description: "Profile tests")
 
     override func setUpWithError() throws {
+        try super.setUpWithError()
     }
 
     override func tearDownWithError() throws {
+        try super.tearDownWithError()
     }
 
     func test_registration() throws {
