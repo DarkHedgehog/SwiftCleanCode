@@ -18,6 +18,8 @@
 		7532515A29B62BCF007DEACD /* CatalogueRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532515929B62BCF007DEACD /* CatalogueRequestFactory.swift */; };
 		7532515C29B62E77007DEACD /* CatalogueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532515B29B62E77007DEACD /* CatalogueTests.swift */; };
 		7532515E29B632FC007DEACD /* ProductDetailResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532515D29B632FC007DEACD /* ProductDetailResult.swift */; };
+		753251C729C36553007DEACD /* BasketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753251C629C36553007DEACD /* BasketTests.swift */; };
+		753251CB29C36721007DEACD /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753251CA29C36721007DEACD /* NetworkConfig.swift */; };
 		7546E13C29B0D45600C389AE /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E13B29B0D45600C389AE /* AbstractErrorParser.swift */; };
 		7546E13F29B0D48500C389AE /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E13E29B0D48500C389AE /* ErrorParser.swift */; };
 		7546E14129B0D4B800C389AE /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E14029B0D4B800C389AE /* DataRequest.swift */; };
@@ -33,7 +35,6 @@
 		7546E15829B0E6B800C389AE /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E15729B0E6B800C389AE /* RegistrationResult.swift */; };
 		7546E15A29B0E77800C389AE /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E15929B0E77800C389AE /* LogoutResult.swift */; };
 		7546E15C29B0E97F00C389AE /* EditProfileResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E15B29B0E97F00C389AE /* EditProfileResult.swift */; };
-		7546E16629B60E2E00C389AE /* SwiftCleanCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E16529B60E2E00C389AE /* SwiftCleanCodeTests.swift */; };
 		7546E16E29B60F3300C389AE /* ResponseCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E16D29B60F3300C389AE /* ResponseCodableTests.swift */; };
 		75DBC4F9299E3DCC007B82DA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 75DBC4F8299E3DCC007B82DA /* Alamofire */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,8 @@
 		7532515929B62BCF007DEACD /* CatalogueRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueRequestFactory.swift; sourceTree = "<group>"; };
 		7532515B29B62E77007DEACD /* CatalogueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueTests.swift; sourceTree = "<group>"; };
 		7532515D29B632FC007DEACD /* ProductDetailResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailResult.swift; sourceTree = "<group>"; };
+		753251C629C36553007DEACD /* BasketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTests.swift; sourceTree = "<group>"; };
+		753251CA29C36721007DEACD /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		7546E13B29B0D45600C389AE /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		7546E13E29B0D48500C389AE /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		7546E14029B0D4B800C389AE /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
@@ -77,7 +80,6 @@
 		7546E15929B0E77800C389AE /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
 		7546E15B29B0E97F00C389AE /* EditProfileResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileResult.swift; sourceTree = "<group>"; };
 		7546E16329B60E2E00C389AE /* SwiftCleanCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCleanCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7546E16529B60E2E00C389AE /* SwiftCleanCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCleanCodeTests.swift; sourceTree = "<group>"; };
 		7546E16D29B60F3300C389AE /* ResponseCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 				7546E14029B0D4B800C389AE /* DataRequest.swift */,
 				7546E14229B0D5B100C389AE /* AbstractRequestFactory.swift */,
 				7546E14429B0D5FA00C389AE /* RequestRouter.swift */,
+				753251CA29C36721007DEACD /* NetworkConfig.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -239,11 +242,11 @@
 		7546E16429B60E2E00C389AE /* SwiftCleanCodeTests */ = {
 			isa = PBXGroup;
 			children = (
-				7546E16529B60E2E00C389AE /* SwiftCleanCodeTests.swift */,
 				7546E16D29B60F3300C389AE /* ResponseCodableTests.swift */,
 				7532514F29B61EF8007DEACD /* AuthTest.swift */,
 				7532515129B62280007DEACD /* ProfileTests.swift */,
 				7532515B29B62E77007DEACD /* CatalogueTests.swift */,
+				753251C629C36553007DEACD /* BasketTests.swift */,
 			);
 			path = SwiftCleanCodeTests;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				7546E15829B0E6B800C389AE /* RegistrationResult.swift in Sources */,
 				7546E15429B0DF9D00C389AE /* Profile.swift in Sources */,
 				7546E14729B0D68500C389AE /* LoginResult.swift in Sources */,
+				753251CB29C36721007DEACD /* NetworkConfig.swift in Sources */,
 				7546E14E29B0D77700C389AE /* Auth.swift in Sources */,
 				7532515E29B632FC007DEACD /* ProductDetailResult.swift in Sources */,
 				7546E14929B0D6A000C389AE /* User.swift in Sources */,
@@ -403,7 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7546E16629B60E2E00C389AE /* SwiftCleanCodeTests.swift in Sources */,
+				753251C729C36553007DEACD /* BasketTests.swift in Sources */,
 				7532515229B62280007DEACD /* ProfileTests.swift in Sources */,
 				7532515C29B62E77007DEACD /* CatalogueTests.swift in Sources */,
 				7546E16E29B60F3300C389AE /* ResponseCodableTests.swift in Sources */,
