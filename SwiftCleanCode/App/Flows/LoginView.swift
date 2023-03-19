@@ -54,6 +54,10 @@ struct LoginView: View {
         auth.login(userName: devUserName, password: devPassword) { response in
             switch response.result {
             case .success(let result):
+                if result.result != 1 {
+                    showIncorrentCredentialsWarning = true
+                    print(result)
+                }
                 userLoggedIn = result.user
             case .failure(let error):
                 showIncorrentCredentialsWarning = true

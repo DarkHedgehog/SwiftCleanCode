@@ -26,7 +26,6 @@ class Profile: AbstractRequestFactory {
 
 extension Profile: ProfileRequestFactory {
     func registration(
-        userId: Int,
         userName: String,
         password: String,
         email: String,
@@ -37,7 +36,6 @@ extension Profile: ProfileRequestFactory {
     ) {
         let requestModel = Registration(
             baseUrl: baseUrl,
-            idUser: userId,
             userName: userName,
             password: password,
             email: email,
@@ -50,7 +48,7 @@ extension Profile: ProfileRequestFactory {
     }
 
     func edit(
-        userId: Int,
+        userId: UUID,
         userName: String,
         password: String,
         email: String,
@@ -79,7 +77,6 @@ extension Profile {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = NetworkConfig.registerPoint
-        let idUser: Int
         let userName: String
         let password: String
         let email: String
@@ -88,7 +85,6 @@ extension Profile {
         let bio: String
         var parameters: Parameters? {
             return [
-                "id_user": 123,
                 "username": userName,
                 "password": password,
                 "email": email,
@@ -101,9 +97,9 @@ extension Profile {
 
     struct EditProfile: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "changeUserData.json"
-        let idUser: Int
+        let method: HTTPMethod = .post
+        let path: String = NetworkConfig.editProfilePoint
+        let idUser: UUID
         let userName: String
         let password: String
         let email: String
@@ -112,7 +108,7 @@ extension Profile {
         let bio: String
         var parameters: Parameters? {
             return [
-                "id_user": 123,
+                "id": idUser,
                 "username": userName,
                 "password": password,
                 "email": email,

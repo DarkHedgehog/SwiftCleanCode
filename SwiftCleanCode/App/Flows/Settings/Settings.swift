@@ -11,20 +11,37 @@ struct Settings: View {
     @Binding var userLoggedIn: User?
 
     @State var isConfirmationLogout = false
-    var body: some View {
-        ScrollView(.vertical) {
-            VStack {
-                if let profile = userLoggedIn {
-                    ProfileView(profile: profile)
-                }
+    @State var isEditMode = false
 
-                Button("Logout") {
-                    isConfirmationLogout = true
+    var body: some View {
+        NavigationStack {
+            ScrollView(.vertical) {
+                VStack {
+                    if let profile = userLoggedIn {
+                        ProfileView(profile: profile)
+
+                        if let profile = Binding($userLoggedIn) {
+                            NavigationLink {
+                                ProfileEdit(profile: profile)
+                            } label: {
+                                Text("Edit")
+                                    .frame(maxWidth: .infinity)
+                            }.buttonStyle(.bordered)
+                        }
+
+                        Button {
+                            isConfirmationLogout = true
+                        } label: {
+                            Text("Logout")
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.bordered)
+                    }
                 }
-            }
-        }.confirmationDialog("Logout", isPresented: $isConfirmationLogout) {
-            Button("Logout") {
-                userLoggedIn = nil
+            }.confirmationDialog("Logout", isPresented: $isConfirmationLogout) {
+                Button("Logout") {
+                    userLoggedIn = nil
+                }.buttonStyle(.bordered)
             }
         }
     }

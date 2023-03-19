@@ -10,7 +10,6 @@ import Alamofire
 
 protocol ProfileRequestFactory {
     func registration(
-        userId: Int,
         userName: String,
         password: String,
         email: String,
@@ -21,13 +20,13 @@ protocol ProfileRequestFactory {
     )
 
     func edit(
-        userId: Int,
+        userId: UUID,
         userName: String,
         password: String,
         email: String,
         gender: String,
         creditCard: String,
         bio: String,
-        completionHandler: @escaping (AFDataResponse<EditProfileResult>) -> Void
+        completionHandler: @escaping (Alamofire.AFDataResponse<EditProfileResult>) -> Void
     )
 }

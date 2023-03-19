@@ -15,7 +15,7 @@ struct ContentView: View {
         if userLoggedIn != nil {
             WorkflowsView(userLoggedIn: $userLoggedIn)
         } else {
-             LoginView(userLoggedIn: $userLoggedIn)
+            LoginView(userLoggedIn: $userLoggedIn)
         }
     }
     init() {
