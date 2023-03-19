@@ -36,6 +36,14 @@
 		7546E15A29B0E77800C389AE /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E15929B0E77800C389AE /* LogoutResult.swift */; };
 		7546E15C29B0E97F00C389AE /* EditProfileResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E15B29B0E97F00C389AE /* EditProfileResult.swift */; };
 		7546E16E29B60F3300C389AE /* ResponseCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546E16D29B60F3300C389AE /* ResponseCodableTests.swift */; };
+		758F26E129C715B0008D33A5 /* WorkflowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26E029C715B0008D33A5 /* WorkflowsView.swift */; };
+		758F26E629C715EC008D33A5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26E429C715EC008D33A5 /* ProfileView.swift */; };
+		758F26E729C715EC008D33A5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26E529C715EC008D33A5 /* Settings.swift */; };
+		758F26EA29C7161A008D33A5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26E929C7161A008D33A5 /* CircleImage.swift */; };
+		758F26ED29C7163F008D33A5 /* BounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26EC29C7163F008D33A5 /* BounceAnimation.swift */; };
+		758F26F029C71702008D33A5 /* CircleShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26EF29C71702008D33A5 /* CircleShadow.swift */; };
+		758F26F229C71715008D33A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26F129C71715008D33A5 /* LoginView.swift */; };
+		758F26F429C71759008D33A5 /* BasketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26F329C71759008D33A5 /* BasketList.swift */; };
 		75DBC4F9299E3DCC007B82DA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 75DBC4F8299E3DCC007B82DA /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +89,14 @@
 		7546E15B29B0E97F00C389AE /* EditProfileResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileResult.swift; sourceTree = "<group>"; };
 		7546E16329B60E2E00C389AE /* SwiftCleanCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCleanCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7546E16D29B60F3300C389AE /* ResponseCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodableTests.swift; sourceTree = "<group>"; };
+		758F26E029C715B0008D33A5 /* WorkflowsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkflowsView.swift; sourceTree = "<group>"; };
+		758F26E429C715EC008D33A5 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		758F26E529C715EC008D33A5 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		758F26E929C7161A008D33A5 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		758F26EC29C7163F008D33A5 /* BounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimation.swift; sourceTree = "<group>"; };
+		758F26EF29C71702008D33A5 /* CircleShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleShadow.swift; sourceTree = "<group>"; };
+		758F26F129C71715008D33A5 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		758F26F329C71759008D33A5 /* BasketList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +200,13 @@
 		752824CD29956175005A5B75 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				758F26EE29C71702008D33A5 /* Modifiers */,
+				758F26EB29C7163F008D33A5 /* Animations */,
+				758F26E829C71609008D33A5 /* Views */,
+				758F26E229C715EC008D33A5 /* Settings */,
+				758F26E029C715B0008D33A5 /* WorkflowsView.swift */,
+				758F26F329C71759008D33A5 /* BasketList.swift */,
+				758F26F129C71715008D33A5 /* LoginView.swift */,
 				752824BD29955E4B005A5B75 /* ContentView.swift */,
 			);
 			path = Flows;
@@ -249,6 +272,47 @@
 				753251C629C36553007DEACD /* BasketTests.swift */,
 			);
 			path = SwiftCleanCodeTests;
+			sourceTree = "<group>";
+		};
+		758F26E229C715EC008D33A5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				758F26E329C715EC008D33A5 /* ProfileView */,
+				758F26E529C715EC008D33A5 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		758F26E329C715EC008D33A5 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				758F26E429C715EC008D33A5 /* ProfileView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		758F26E829C71609008D33A5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				758F26E929C7161A008D33A5 /* CircleImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		758F26EB29C7163F008D33A5 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				758F26EC29C7163F008D33A5 /* BounceAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		758F26EE29C71702008D33A5 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				758F26EF29C71702008D33A5 /* CircleShadow.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,20 +443,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				7546E15229B0D92F00C389AE /* RequestFactory.swift in Sources */,
+				758F26F229C71715008D33A5 /* LoginView.swift in Sources */,
 				7546E14329B0D5B100C389AE /* AbstractRequestFactory.swift in Sources */,
 				7546E13C29B0D45600C389AE /* AbstractErrorParser.swift in Sources */,
+				758F26EA29C7161A008D33A5 /* CircleImage.swift in Sources */,
+				758F26E129C715B0008D33A5 /* WorkflowsView.swift in Sources */,
 				7546E14C29B0D73F00C389AE /* AuthRequestFactory.swift in Sources */,
+				758F26ED29C7163F008D33A5 /* BounceAnimation.swift in Sources */,
 				7546E14529B0D5FA00C389AE /* RequestRouter.swift in Sources */,
 				7532515429B62920007DEACD /* Catalogue.swift in Sources */,
+				758F26F429C71759008D33A5 /* BasketList.swift in Sources */,
 				7546E14129B0D4B800C389AE /* DataRequest.swift in Sources */,
 				7546E15A29B0E77800C389AE /* LogoutResult.swift in Sources */,
+				758F26E729C715EC008D33A5 /* Settings.swift in Sources */,
 				7546E15C29B0E97F00C389AE /* EditProfileResult.swift in Sources */,
+				758F26F029C71702008D33A5 /* CircleShadow.swift in Sources */,
 				7546E15829B0E6B800C389AE /* RegistrationResult.swift in Sources */,
 				7546E15429B0DF9D00C389AE /* Profile.swift in Sources */,
 				7546E14729B0D68500C389AE /* LoginResult.swift in Sources */,
 				753251CB29C36721007DEACD /* NetworkConfig.swift in Sources */,
 				7546E14E29B0D77700C389AE /* Auth.swift in Sources */,
 				7532515E29B632FC007DEACD /* ProductDetailResult.swift in Sources */,
+				758F26E629C715EC008D33A5 /* ProfileView.swift in Sources */,
 				7546E14929B0D6A000C389AE /* User.swift in Sources */,
 				752824BE29955E4B005A5B75 /* ContentView.swift in Sources */,
 				752824BC29955E4B005A5B75 /* SwiftCleanCodeApp.swift in Sources */,

@@ -9,17 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     let requestFactory = RequestFactory()
+    @State private var userLoggedIn: User?
 
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        if userLoggedIn != nil {
+            WorkflowsView(userLoggedIn: $userLoggedIn)
+        } else {
+             LoginView(userLoggedIn: $userLoggedIn)
         }
-        .padding()
     }
-
     init() {
     }
 }
