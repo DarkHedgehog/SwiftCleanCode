@@ -14,8 +14,6 @@ struct LoginView: View {
     @State private var login = ""
     @State private var password = ""
 
-    let auth = RequestFactory().makeAuthRequestFatory()
-
     var body: some View {
         ZStack {
             Image("back")
@@ -51,17 +49,12 @@ struct LoginView: View {
         let devUserName = "FirstUser"
         let devPassword = "FirstUserPassword"
 
-        auth.login(userName: devUserName, password: devPassword) { response in
-            switch response.result {
-            case .success(let result):
-                if result.result != 1 {
-                    showIncorrentCredentialsWarning = true
-                    print(result)
-                }
-                userLoggedIn = result.user
-            case .failure(let error):
+        ApiDataService.shared.login(userName: devUserName, password: devPassword) {
+            result in
+            if result {
+                userLoggedIn = ApiDataService.shared.getProfile()
+            } else {
                 showIncorrentCredentialsWarning = true
-                print(error)
             }
         }
         password = ""

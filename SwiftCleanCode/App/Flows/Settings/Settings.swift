@@ -18,7 +18,7 @@ struct Settings: View {
             ScrollView(.vertical) {
                 VStack {
                     if let profile = userLoggedIn {
-                        ProfileView(profile: profile)
+                        ProfileView(viewModel: ProfileViewModel())
 
                         if let profile = Binding($userLoggedIn) {
                             NavigationLink {
