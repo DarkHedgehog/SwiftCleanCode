@@ -12,7 +12,7 @@ class Catalogue: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = NetworkConfig.baseUrl
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
@@ -49,7 +49,7 @@ extension Catalogue {
     struct CatalogueList: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .get
-        let path: String = "catalogData.json"
+        let path: String = NetworkConfig.productListPoint
         let pageNumber: Int
         let categoryId: Int
         var parameters: Parameters? {

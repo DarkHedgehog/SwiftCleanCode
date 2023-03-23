@@ -70,6 +70,16 @@ extension Profile: ProfileRequestFactory {
 
         self.request(request: requestModel, completionHandler: completionHandler)
     }
+
+    func read(userId: UUID, completionHandler: @escaping (Alamofire.AFDataResponse<ReadProfileResult>) -> Void) {
+
+        let requestModel = ReadProfile(
+            baseUrl: baseUrl,
+            idUser: userId
+        )
+
+        self.request(request: requestModel, completionHandler: completionHandler)
+    }
 }
 
 extension Profile {
@@ -115,6 +125,18 @@ extension Profile {
                 "gender": gender,
                 "credit_card": creditCard,
                 "bio": bio
+            ]
+        }
+    }
+
+    struct ReadProfile: RequestRouter {
+        let baseUrl: URL
+        let method: HTTPMethod = .get
+        let path: String = NetworkConfig.readProfilePoint
+        let idUser: UUID
+        var parameters: Parameters? {
+            return [
+                "id": idUser,
             ]
         }
     }

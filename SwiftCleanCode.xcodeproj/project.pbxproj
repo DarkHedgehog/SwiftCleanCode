@@ -45,6 +45,11 @@
 		758F26F229C71715008D33A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26F129C71715008D33A5 /* LoginView.swift */; };
 		758F26F429C71759008D33A5 /* BasketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26F329C71759008D33A5 /* BasketList.swift */; };
 		758F26F629C7B62C008D33A5 /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26F529C7B62C008D33A5 /* ProfileEdit.swift */; };
+		758F26F829C89EC1008D33A5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26F729C89EC1008D33A5 /* ProfileViewModel.swift */; };
+		758F26FB29C89FC1008D33A5 /* ReadProfileResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26FA29C89FC1008D33A5 /* ReadProfileResult.swift */; };
+		758F26FE29C8A0A8008D33A5 /* ApiDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26FD29C8A0A7008D33A5 /* ApiDataService.swift */; };
+		758F270029CA0682008D33A5 /* ProductsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F26FF29CA0682008D33A5 /* ProductsList.swift */; };
+		758F270229CA06AA008D33A5 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758F270129CA06AA008D33A5 /* ProductsViewModel.swift */; };
 		75DBC4F9299E3DCC007B82DA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 75DBC4F8299E3DCC007B82DA /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +104,11 @@
 		758F26F129C71715008D33A5 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		758F26F329C71759008D33A5 /* BasketList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketList.swift; sourceTree = "<group>"; };
 		758F26F529C7B62C008D33A5 /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
+		758F26F729C89EC1008D33A5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		758F26FA29C89FC1008D33A5 /* ReadProfileResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadProfileResult.swift; sourceTree = "<group>"; };
+		758F26FD29C8A0A7008D33A5 /* ApiDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataService.swift; sourceTree = "<group>"; };
+		758F26FF29CA0682008D33A5 /* ProductsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsList.swift; sourceTree = "<group>"; };
+		758F270129CA06AA008D33A5 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +183,8 @@
 		752824CA29956157005A5B75 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				758F26FC29C8A096008D33A5 /* Api */,
+				758F26F929C89EC5008D33A5 /* ViewModels */,
 				7546E14A29B0D72900C389AE /* Network */,
 			);
 			path = BusinessLogic;
@@ -188,6 +200,7 @@
 				7546E14829B0D6A000C389AE /* User.swift */,
 				7546E15729B0E6B800C389AE /* RegistrationResult.swift */,
 				7532515729B62A7B007DEACD /* ProductShort.swift */,
+				758F26FA29C89FC1008D33A5 /* ReadProfileResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -210,6 +223,7 @@
 				758F26F329C71759008D33A5 /* BasketList.swift */,
 				758F26F129C71715008D33A5 /* LoginView.swift */,
 				752824BD29955E4B005A5B75 /* ContentView.swift */,
+				758F26FF29CA0682008D33A5 /* ProductsList.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -316,6 +330,23 @@
 				758F26EF29C71702008D33A5 /* CircleShadow.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		758F26F929C89EC5008D33A5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				758F26F729C89EC1008D33A5 /* ProfileViewModel.swift */,
+				758F270129CA06AA008D33A5 /* ProductsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		758F26FC29C8A096008D33A5 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				758F26FD29C8A0A7008D33A5 /* ApiDataService.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,14 +483,18 @@
 				758F26EA29C7161A008D33A5 /* CircleImage.swift in Sources */,
 				758F26E129C715B0008D33A5 /* WorkflowsView.swift in Sources */,
 				7546E14C29B0D73F00C389AE /* AuthRequestFactory.swift in Sources */,
+				758F270029CA0682008D33A5 /* ProductsList.swift in Sources */,
 				758F26ED29C7163F008D33A5 /* BounceAnimation.swift in Sources */,
 				7546E14529B0D5FA00C389AE /* RequestRouter.swift in Sources */,
 				7532515429B62920007DEACD /* Catalogue.swift in Sources */,
 				758F26F429C71759008D33A5 /* BasketList.swift in Sources */,
 				7546E14129B0D4B800C389AE /* DataRequest.swift in Sources */,
+				758F26FE29C8A0A8008D33A5 /* ApiDataService.swift in Sources */,
 				7546E15A29B0E77800C389AE /* LogoutResult.swift in Sources */,
 				758F26E729C715EC008D33A5 /* Settings.swift in Sources */,
+				758F26F829C89EC1008D33A5 /* ProfileViewModel.swift in Sources */,
 				758F26F629C7B62C008D33A5 /* ProfileEdit.swift in Sources */,
+				758F270229CA06AA008D33A5 /* ProductsViewModel.swift in Sources */,
 				7546E15C29B0E97F00C389AE /* EditProfileResult.swift in Sources */,
 				758F26F029C71702008D33A5 /* CircleShadow.swift in Sources */,
 				7546E15829B0E6B800C389AE /* RegistrationResult.swift in Sources */,
@@ -472,6 +507,7 @@
 				7546E14929B0D6A000C389AE /* User.swift in Sources */,
 				752824BE29955E4B005A5B75 /* ContentView.swift in Sources */,
 				752824BC29955E4B005A5B75 /* SwiftCleanCodeApp.swift in Sources */,
+				758F26FB29C89FC1008D33A5 /* ReadProfileResult.swift in Sources */,
 				7532515829B62A7B007DEACD /* ProductShort.swift in Sources */,
 				7532515A29B62BCF007DEACD /* CatalogueRequestFactory.swift in Sources */,
 				7546E15629B0E20B00C389AE /* ProfileRequestFactory.swift in Sources */,

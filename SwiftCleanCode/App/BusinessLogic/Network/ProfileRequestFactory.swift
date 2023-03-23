@@ -29,4 +29,6 @@ protocol ProfileRequestFactory {
         bio: String,
         completionHandler: @escaping (Alamofire.AFDataResponse<EditProfileResult>) -> Void
     )
+
+    func read(userId: UUID, completionHandler: @escaping (Alamofire.AFDataResponse<ReadProfileResult>) -> Void)
 }
