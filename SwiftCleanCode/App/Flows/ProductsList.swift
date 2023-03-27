@@ -15,7 +15,7 @@ struct ProductsList: View {
             List {
                 ForEach(viewModel.products) { product in
                     NavigationLink(destination: {
-                        ProductDetailView()
+                        ProductDetailView(viewModel: ProductDetailViewModel(productId: product.id))
                     }, label: {
                         HStack {
                             Text(product.name)

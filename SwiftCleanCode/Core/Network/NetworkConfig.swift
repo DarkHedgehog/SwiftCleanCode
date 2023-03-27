@@ -15,6 +15,8 @@ final class NetworkConfig {
     static let editProfilePoint = "updateProfile"
     static let readProfilePoint = "getProfile"
     static let productListPoint = "products"
+    static let productGetPoint = "products"
+    static let reviewsListPoint = "reviews"
 }
 
 final class OldNetworkConfig {
@@ -23,4 +25,5 @@ final class OldNetworkConfig {
     static let registerPoint = "registerUser.json"
     static let editProfilePoint = "changeUserData.json"
     static let productListPoint = "catalogData.json"
+    static let productGetPoint = "getGoodById.json"
 }

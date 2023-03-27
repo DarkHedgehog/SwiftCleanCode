@@ -15,6 +15,7 @@ final class ApiDataService {
     private let requestFactory = RequestFactory()
     private lazy var auth = requestFactory.makeAuthRequestFatory()
     private lazy var catalogue = requestFactory.makeCatalogueRequestFatory()
+    private lazy var reviews = requestFactory.makeReviewsRequestFatory()
 
     private init() { }
 
@@ -63,6 +64,42 @@ final class ApiDataService {
                 print(error)
                 DispatchQueue.main.async {
                     closure([])
+                }
+            }
+        }
+    }
+
+    public func getProductDetail(id: UUID, _ closure: @escaping (ProductDetail?) -> Void) {
+        catalogue.product(id: id) { response in
+            switch response.result {
+            case .success(let result):
+                DispatchQueue.main.async {
+                    if let product = result.product {
+                        closure(product)
+                    } else {
+                        closure(nil)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                DispatchQueue.main.async {
+                    closure(nil)
+                }
+            }
+        }
+    }
+
+    public func getReviewsForProduct(id: UUID, _ closure: @escaping ([Review]?) -> Void) {
+        reviews.listForProduct(productId: id) { response in
+            switch response.result {
+            case .success(let result):
+                DispatchQueue.main.async {
+                    closure(result.reviews)
+                }
+            case .failure(let error):
+                print(error)
+                DispatchQueue.main.async {
+                    closure(nil)
                 }
             }
         }
