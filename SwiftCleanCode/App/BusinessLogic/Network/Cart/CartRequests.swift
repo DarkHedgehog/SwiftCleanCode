@@ -40,6 +40,15 @@ extension CartRequests: CartRequestFactory {
         self.request(request: requestModel, completionHandler: completionHandler)
     }
 
+    func cartPayForAll(
+        userId: UUID,
+        sign: String,
+        completionHandler: @escaping (Alamofire.AFDataResponse<CartGetResult>) -> Void
+    ) {
+        let requestModel = CartPayForAll( baseUrl: baseUrl, userId: userId, sign: sign)
+        self.request(request: requestModel, completionHandler: completionHandler)
+    }
+
 }
 
 extension CartRequests {
@@ -76,6 +85,26 @@ extension CartRequests {
             self.baseUrl = baseUrl
             self.userId = userId
             self.path = NetworkConfig.cartGetPoint + "/" + userId.uuidString
+        }
+    }
+
+    struct CartPayForAll: RequestRouter {
+        let baseUrl: URL
+        let method: HTTPMethod = .post
+        let path: String
+        let userId: UUID
+        let sign: String
+        var parameters: Parameters? {
+            return [
+                "sign": sign
+            ]
+        }
+
+        init(baseUrl: URL, userId: UUID, sign: String) {
+            self.baseUrl = baseUrl
+            self.userId = userId
+            self.sign = sign
+            self.path = NetworkConfig.cartpayForAll + "/" + userId.uuidString
         }
     }
 }

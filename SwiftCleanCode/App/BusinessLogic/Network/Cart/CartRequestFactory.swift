@@ -15,8 +15,14 @@ protocol CartRequestFactory {
         completionHandler: @escaping (Alamofire.AFDataResponse<CartAddResult>) -> Void
     )
 
-    func getCart (
+    func getCart(
         userId: UUID,
+        completionHandler: @escaping (Alamofire.AFDataResponse<CartGetResult>) -> Void
+    )
+
+    func cartPayForAll(
+        userId: UUID,
+        sign: String,
         completionHandler: @escaping (Alamofire.AFDataResponse<CartGetResult>) -> Void
     )
 }

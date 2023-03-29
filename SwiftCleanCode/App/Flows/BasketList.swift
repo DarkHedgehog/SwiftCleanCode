@@ -40,13 +40,21 @@ struct BasketList: View {
                 }.padding()
 
                 Button {
-
+                    ApiDataService.shared.cartPayForAll { result in
+                        viewModel.fetch()
+                    }
                 } label: {
                     Text("Buy all")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
                 .padding()
+            } else {
+                HStack {
+                    Text("Balance")
+                    Spacer()
+                    Text("\((viewModel.cart?.balance ?? 0.0).formatted())")
+                }.padding()
             }
         }
         .onAppear(perform: viewModel.fetch)
