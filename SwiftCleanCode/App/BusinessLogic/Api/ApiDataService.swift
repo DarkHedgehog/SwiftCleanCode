@@ -23,83 +23,83 @@ final class ApiDataService {
         return loggedProfile
     }
 
-    public func login(userName: String, password: String, _ closure: @escaping (Bool) -> Void) {
+    public func login(userName: String, password: String, _ completion: @escaping (Bool) -> Void) {
         auth.login(userName: userName, password: password) { response in
             switch response.result {
             case .success(let result):
                 if result.result != 1 {
                     self.loggedProfile = nil
                     DispatchQueue.main.async {
-                        closure(false)
+                        completion(false)
                     }
                 } else {
                     self.loggedProfile = result.user
                     DispatchQueue.main.async {
-                        closure(true)
+                        completion(true)
                     }
                 }
             case .failure(let error):
                 print(error)
                 self.loggedProfile = nil
                 DispatchQueue.main.async {
-                    closure(false)
+                    completion(false)
                 }
             }
         }
     }
 
-    public func logout(_ closure: @escaping (Bool) -> Void) {
+    public func logout(_ completion: @escaping (Bool) -> Void) {
         loggedProfile = nil
-        closure(true)
+        completion(true)
     }
 
-    public func getProducts(_ closure: @escaping ([ProductShort]) -> Void) {
+    public func getProducts(_ completion: @escaping ([ProductShort]) -> Void) {
         catalogue.list(pageNumber: 0, categoryId: 0) { response in
             switch response.result {
             case .success(let result):
                 DispatchQueue.main.async {
-                    closure(result)
+                    completion(result)
                 }
             case .failure(let error):
                 print(error)
                 DispatchQueue.main.async {
-                    closure([])
+                    completion([])
                 }
             }
         }
     }
 
-    public func getProductDetail(id: UUID, _ closure: @escaping (ProductDetail?) -> Void) {
+    public func getProductDetail(id: UUID, _ completion: @escaping (ProductDetail?) -> Void) {
         catalogue.product(id: id) { response in
             switch response.result {
             case .success(let result):
                 DispatchQueue.main.async {
                     if let product = result.product {
-                        closure(product)
+                        completion(product)
                     } else {
-                        closure(nil)
+                        completion(nil)
                     }
                 }
             case .failure(let error):
                 print(error)
                 DispatchQueue.main.async {
-                    closure(nil)
+                    completion(nil)
                 }
             }
         }
     }
 
-    public func getReviewsForProduct(id: UUID, _ closure: @escaping ([Review]?) -> Void) {
+    public func getReviewsForProduct(id: UUID, _ completion: @escaping ([Review]?) -> Void) {
         reviews.listForProduct(productId: id) { response in
             switch response.result {
             case .success(let result):
                 DispatchQueue.main.async {
-                    closure(result.reviews)
+                    completion(result.reviews)
                 }
             case .failure(let error):
                 print(error)
                 DispatchQueue.main.async {
-                    closure(nil)
+                    completion(nil)
                 }
             }
         }

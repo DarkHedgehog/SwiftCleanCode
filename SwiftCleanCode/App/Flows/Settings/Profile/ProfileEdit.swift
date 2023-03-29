@@ -45,7 +45,7 @@ struct ProfileEdit: View {
         }
     }
 
-    private func saveProfile(_ successClosure: @escaping () -> Void) {
+    private func saveProfile(_ completion: @escaping () -> Void) {
         guard let userId = profile.id else {
             showUpdateErrorWarning = true
             return
@@ -62,7 +62,7 @@ struct ProfileEdit: View {
         ) { response in
             switch response.result {
             case .success(let result):
-                successClosure()
+                completion()
 
             case .failure(let error):
                 showUpdateErrorWarning = true

@@ -13,6 +13,7 @@ class Catalogue: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = NetworkConfig.baseUrl
+
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
@@ -68,6 +69,7 @@ extension Catalogue {
         var parameters: Parameters? {
             return [:]
         }
+
         init(baseUrl: URL, id: UUID) {
             self.baseUrl = baseUrl
             self.id = id
