@@ -17,6 +17,7 @@ final class NetworkConfig {
     static let productListPoint = "products"
     static let productGetPoint = "products"
     static let reviewsListPoint = "reviews"
+    static let cartAddProductPoint = "basket"
 }
 
 final class OldNetworkConfig {

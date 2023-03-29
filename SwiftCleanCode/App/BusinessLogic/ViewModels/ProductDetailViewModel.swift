@@ -13,6 +13,8 @@ class ProductDetailViewModel: ObservableObject {
     @Published var reviews: [Review] = []
 
     public func fetch() {
+        self.product = nil
+        self.reviews = []
         ApiDataService.shared.getProductDetail(id: productId) { [weak self] result in
             self?.product = result
         }

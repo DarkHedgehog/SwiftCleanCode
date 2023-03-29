@@ -16,6 +16,7 @@ final class ApiDataService {
     private lazy var auth = requestFactory.makeAuthRequestFatory()
     private lazy var catalogue = requestFactory.makeCatalogueRequestFatory()
     private lazy var reviews = requestFactory.makeReviewsRequestFatory()
+    private lazy var cart = requestFactory.makeCartRequestFatory()
 
     private init() { }
 
@@ -100,6 +101,28 @@ final class ApiDataService {
                 print(error)
                 DispatchQueue.main.async {
                     completion(nil)
+                }
+            }
+        }
+    }
+
+    public func cartAdd(productId: UUID, _ completion: @escaping (Bool) -> Void) {
+        guard let userId = loggedProfile?.id else {
+            DispatchQueue.main.async {
+                completion(false)
+            }
+            return
+        }
+        cart.addProductToCart(userId: userId, productId: productId) { response in
+            switch response.result {
+            case .success(let result):
+                DispatchQueue.main.async {
+                    completion(true)
+                }
+            case .failure(let error):
+                print(error)
+                DispatchQueue.main.async {
+                    completion(false)
                 }
             }
         }
