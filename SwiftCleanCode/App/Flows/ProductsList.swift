@@ -11,12 +11,18 @@ struct ProductsList: View {
     @ObservedObject var viewModel: ProductsViewModel
 
     var body: some View {
-        List {
-            ForEach(viewModel.products) { product in
-                HStack {
-                    Text(product.name)
-                    Spacer()
-                    Text("\(product.price.formatted())")
+        NavigationStack {
+            List {
+                ForEach(viewModel.products) { product in
+                    NavigationLink(destination: {
+                        ProductDetailView(viewModel: ProductDetailViewModel(productId: product.id))
+                    }, label: {
+                        HStack {
+                            Text(product.name)
+                            Spacer()
+                            Text("\(product.price.formatted())")
+                        }
+                    })
                 }
             }
         }

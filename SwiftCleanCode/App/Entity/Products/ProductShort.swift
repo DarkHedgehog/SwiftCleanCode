@@ -19,14 +19,14 @@ struct ProductShort: Codable, Identifiable {
 }
 
 struct ProductDetail: Codable {
-    let id: Int
+    let id: UUID
     let name: String
     let price: Double
-    let description: String
+//    let description: String
     enum CodingKeys: String, CodingKey {
-        case id = "id_product"
-        case name = "product_name"
-        case price = "product_price"
-        case description = "product_description"
+        case id = "id"
+        case name = "name"
+        case price = "cost"
+//        case description = "product_description"
     }
 }

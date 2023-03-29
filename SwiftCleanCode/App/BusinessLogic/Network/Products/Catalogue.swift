@@ -39,7 +39,7 @@ extension Catalogue: CatalogueRequestFactory {
         self.request(request: requestModel, completionHandler: completionHandler)
     }
 
-    func product(id: Int, completionHandler: @escaping (Alamofire.AFDataResponse<ProductDetailResult>) -> Void) {
+    func product(id: UUID, completionHandler: @escaping (Alamofire.AFDataResponse<ProductDetailResult>) -> Void) {
         let requestModel = CatalogueProduct( baseUrl: baseUrl, id: id)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
@@ -63,12 +63,15 @@ extension Catalogue {
     struct CatalogueProduct: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .get
-        let path: String = "getGoodById.json"
-        let id: Int
+        let path: String
+        let id: UUID
         var parameters: Parameters? {
-            return [
-                "id_product": id
-            ]
+            return [:]
+        }
+        init(baseUrl: URL, id: UUID) {
+            self.baseUrl = baseUrl
+            self.id = id
+            self.path = NetworkConfig.productGetPoint + "/" + id.uuidString
         }
     }
 }

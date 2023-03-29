@@ -15,7 +15,7 @@ protocol CatalogueRequestFactory {
         completionHandler: @escaping (Alamofire.AFDataResponse<[ProductShort]>) -> Void
     )
     func product(
-        id: Int,
+        id: UUID,
         completionHandler: @escaping (Alamofire.AFDataResponse<ProductDetailResult>) -> Void
     )
 }
