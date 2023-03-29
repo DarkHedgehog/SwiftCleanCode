@@ -9,7 +9,7 @@ import Foundation
 
 struct UserCart: Codable {
     let userId: UUID
-    let product: [ProductShort]
+    let products: [ProductShort]
     let totalCost: Double
     let balance: Double
 }

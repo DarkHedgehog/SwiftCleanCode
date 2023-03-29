@@ -106,6 +106,28 @@ final class ApiDataService {
         }
     }
 
+    public func getCart(_ completion: @escaping (UserCart?) -> Void) {
+        guard let userId = loggedProfile?.id else {
+            DispatchQueue.main.async {
+                completion(nil)
+            }
+            return
+        }
+        cart.getCart(userId: userId) { response in
+            switch response.result {
+            case .success(let result):
+                DispatchQueue.main.async {
+                    completion(result.cart)
+                }
+            case .failure(let error):
+                print(error)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }
+    }
+
     public func cartAdd(productId: UUID, _ completion: @escaping (Bool) -> Void) {
         guard let userId = loggedProfile?.id else {
             DispatchQueue.main.async {

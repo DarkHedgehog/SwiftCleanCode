@@ -19,7 +19,7 @@ struct WorkflowsView: View {
             .tabItem {
                 Label("Products", systemImage: "list.dash")
             }
-            BasketList().tabItem {
+            BasketList(viewModel: CartViewModel()).tabItem {
                 Label("Basket", systemImage: "list.dash")
             }
             Settings(userLoggedIn: $userLoggedIn).tabItem {

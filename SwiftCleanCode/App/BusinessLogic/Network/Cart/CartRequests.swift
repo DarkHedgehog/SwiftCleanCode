@@ -34,6 +34,12 @@ extension CartRequests: CartRequestFactory {
         let requestModel = ProductAddToCart( baseUrl: baseUrl, userId: userId, productId: productId)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
+
+    func getCart(userId: UUID, completionHandler: @escaping (Alamofire.AFDataResponse<CartGetResult>) -> Void) {
+        let requestModel = CartGet( baseUrl: baseUrl, userId: userId)
+        self.request(request: requestModel, completionHandler: completionHandler)
+    }
+
 }
 
 extension CartRequests {
@@ -54,6 +60,22 @@ extension CartRequests {
             self.userId = userId
             self.productId = productId
             self.path = NetworkConfig.cartAddProductPoint + "/" + userId.uuidString
+        }
+    }
+
+    struct CartGet: RequestRouter {
+        let baseUrl: URL
+        let method: HTTPMethod = .get
+        let path: String
+        let userId: UUID
+        var parameters: Parameters? {
+            return [:]
+        }
+
+        init(baseUrl: URL, userId: UUID) {
+            self.baseUrl = baseUrl
+            self.userId = userId
+            self.path = NetworkConfig.cartGetPoint + "/" + userId.uuidString
         }
     }
 }
