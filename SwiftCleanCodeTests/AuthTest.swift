@@ -35,7 +35,7 @@ final class AuthTest: XCTestCase {
             }
             self.expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 10.0)        
+        wait(for: [expectation], timeout: 10.0)
     }
 
     func test_logout() throws {

@@ -49,8 +49,7 @@ struct LoginView: View {
         let devUserName = "FirstUser"
         let devPassword = "FirstUserPassword"
 
-        ApiDataService.shared.login(userName: devUserName, password: devPassword) {
-            result in
+        ApiDataService.shared.login(userName: devUserName, password: devPassword) { result in
             if result {
                 userLoggedIn = ApiDataService.shared.getProfile()
             } else {
