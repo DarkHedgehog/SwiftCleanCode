@@ -40,8 +40,11 @@ struct BasketList: View {
                 }.padding()
 
                 Button {
-                    ApiDataService.shared.cartPayForAll { result in
-                        viewModel.fetch()
+                    if let cart = viewModel.cart {
+                        AppAnalythics.shared.logEvent(.cartPayAll(cart.userId, cart.totalCost))
+                        ApiDataService.shared.cartPayForAll { result in
+                            viewModel.fetch()
+                        }
                     }
                 } label: {
                     Text("Buy all")
