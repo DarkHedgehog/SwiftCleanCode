@@ -52,8 +52,10 @@ struct LoginView: View {
         ApiDataService.shared.login(userName: devUserName, password: devPassword) { result in
             if result {
                 userLoggedIn = ApiDataService.shared.getProfile()
+                AppAnalythics.shared.logEvent(.login)
             } else {
                 showIncorrentCredentialsWarning = true
+                AppAnalythics.shared.logEvent(.loginFailed(devUserName))
             }
         }
         password = ""

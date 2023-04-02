@@ -41,6 +41,7 @@ struct Settings: View {
             }.confirmationDialog("Logout", isPresented: $isConfirmationLogout) {
                 Button("Logout") {
                     userLoggedIn = nil
+                    AppAnalythics.shared.logEvent(.logout)
                 }.buttonStyle(.bordered)
             }
         }

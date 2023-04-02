@@ -30,6 +30,7 @@ struct ProductDetailView: View {
         }
         .onAppear {
             viewModel.fetch()
+            AppAnalythics.shared.logEvent(.productOpened(viewModel.productId))
         }
         .alert(isPresented: $isAddedMessagePresented) {
             Alert(
@@ -47,7 +48,9 @@ struct ProductDetailView: View {
 
     private func addProductAction() {
         ApiDataService.shared.cartAdd(productId: viewModel.productId) { result in
+            AppAnalythics.shared.logEvent(.tryAddToCart(viewModel.productId))
             if result {
+                AppAnalythics.shared.logEvent(.addToCart(viewModel.productId))
                 isAddedMessagePresented = true
             } else {
                 isErrorMessagePresented = true

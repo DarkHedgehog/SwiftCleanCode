@@ -28,6 +28,7 @@ struct ProductsList: View {
         }
         .onAppear {
             viewModel.fetch()
+            AppAnalythics.shared.logEvent(.productListOpened)
         }
     }
 }
