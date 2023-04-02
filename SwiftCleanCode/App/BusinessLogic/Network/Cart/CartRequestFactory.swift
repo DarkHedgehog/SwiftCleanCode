@@ -12,7 +12,13 @@ protocol CartRequestFactory {
     func addProductToCart(
         userId: UUID,
         productId: UUID,
-        completionHandler: @escaping (Alamofire.AFDataResponse<CartAddResult>) -> Void
+        completionHandler: @escaping (Alamofire.AFDataResponse<CartChangesResult>) -> Void
+    )
+
+    func removeProductFromCart(
+        userId: UUID,
+        productId: UUID,
+        completionHandler: @escaping (Alamofire.AFDataResponse<CartChangesResult>) -> Void
     )
 
     func getCart(

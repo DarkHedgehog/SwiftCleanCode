@@ -17,7 +17,7 @@ final class NetworkConfig {
     static let productListPoint = "products"
     static let productGetPoint = "products"
     static let reviewsListPoint = "reviews"
-    static let cartAddProductPoint = "basket"
+    static let cartChangeProductPoint = "basket"
     static let cartGetPoint = "basket"
     static let cartpayForAll = "payBasket"
 }

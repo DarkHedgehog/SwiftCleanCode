@@ -29,9 +29,18 @@ extension CartRequests: CartRequestFactory {
     func addProductToCart(
         userId: UUID,
         productId: UUID,
-        completionHandler: @escaping (Alamofire.AFDataResponse<CartAddResult>) -> Void
+        completionHandler: @escaping (Alamofire.AFDataResponse<CartChangesResult>) -> Void
     ) {
         let requestModel = ProductAddToCart( baseUrl: baseUrl, userId: userId, productId: productId)
+        self.request(request: requestModel, completionHandler: completionHandler)
+    }
+
+    func removeProductFromCart(
+        userId: UUID,
+        productId: UUID,
+        completionHandler: @escaping (Alamofire.AFDataResponse<CartChangesResult>) -> Void
+    ) {
+        let requestModel = ProductRemoveFromCart( baseUrl: baseUrl, userId: userId, productId: productId)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
 
@@ -52,6 +61,27 @@ extension CartRequests: CartRequestFactory {
 }
 
 extension CartRequests {
+
+    struct ProductRemoveFromCart: RequestRouter {
+        let baseUrl: URL
+        let method: HTTPMethod = .delete
+        let path: String
+        let userId: UUID
+        let productId: UUID
+        var parameters: Parameters? {
+            return [
+                "productId": productId
+            ]
+        }
+
+        init(baseUrl: URL, userId: UUID, productId: UUID) {
+            self.baseUrl = baseUrl
+            self.userId = userId
+            self.productId = productId
+            self.path = NetworkConfig.cartChangeProductPoint + "/" + userId.uuidString
+        }
+    }
+
     struct ProductAddToCart: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
@@ -68,7 +98,7 @@ extension CartRequests {
             self.baseUrl = baseUrl
             self.userId = userId
             self.productId = productId
-            self.path = NetworkConfig.cartAddProductPoint + "/" + userId.uuidString
+            self.path = NetworkConfig.cartChangeProductPoint + "/" + userId.uuidString
         }
     }
 

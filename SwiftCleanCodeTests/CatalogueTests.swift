@@ -44,7 +44,7 @@ final class CatalogueTests: XCTestCase {
             switch response.result {
             case .success(let result):
                 XCTAssertEqual(result.result, 1)
-                let product = ProductDetailView(
+                let product = ProductListDetailView(
                     id: productId,
                     name: result.productName,
                     price: result.productPrice,

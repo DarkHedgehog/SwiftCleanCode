@@ -16,7 +16,7 @@ struct BasketList: View {
                 List {
                     ForEach(viewModel.cart?.products ?? []) { product in
                         NavigationLink(destination: {
-                            ProductDetailView(viewModel: ProductDetailViewModel(productId: product.id))
+                            BasketListDetailView(viewModel: ProductDetailViewModel(productId: product.id))
                         }, label: {
                             HStack {
                                 Text(product.name)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CartAddResult: Codable {
+struct CartChangesResult: Codable {
     var result: Int
     var errorMessage: String?
     var userMessage: String?

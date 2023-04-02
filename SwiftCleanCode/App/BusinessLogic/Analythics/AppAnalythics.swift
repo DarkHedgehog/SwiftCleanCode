@@ -47,6 +47,14 @@ final class AppAnalythics {
             Analytics.logEvent("tryAddToCart", parameters: [
                 "id": id.uuidString as NSObject
             ])
+        case .tryRemoveFromCart(let id):
+            Analytics.logEvent("tryRemoveFromCart", parameters: [
+                "id": id.uuidString as NSObject
+            ])
+        case .removeFromCart(let id):
+            Analytics.logEvent("removeFromCart", parameters: [
+                "id": id.uuidString as NSObject
+            ])
         }
     }
 
@@ -58,5 +66,7 @@ final class AppAnalythics {
         case productOpened(UUID)
         case addToCart(UUID)
         case tryAddToCart(UUID)
+        case tryRemoveFromCart(UUID)
+        case removeFromCart(UUID)
     }
 }
