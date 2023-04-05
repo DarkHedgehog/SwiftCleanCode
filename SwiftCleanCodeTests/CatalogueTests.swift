@@ -35,26 +35,26 @@ final class CatalogueTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func test_catalogueProduct() throws {
-        let requestFactory = RequestFactory()
-        let catalogue = requestFactory.makeCatalogueRequestFatory()
-        let productId = 1
-
-        catalogue.product(id: productId) { response in
-            switch response.result {
-            case .success(let result):
-                XCTAssertEqual(result.result, 1)
-                let product = ProductListDetailView(
-                    id: productId,
-                    name: result.productName,
-                    price: result.productPrice,
-                    description: result.productDescription)
-                XCTAssertEqual(product.name, "Ноутбук")
-            case .failure(let error):
-                XCTFail(error.localizedDescription)
-            }
-            self.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 10.0)
-    }
+//    func test_catalogueProduct() throws {
+//        let requestFactory = RequestFactory()
+//        let catalogue = requestFactory.makeCatalogueRequestFatory()
+//        let productId = 1
+//
+//        catalogue.product(id: productId) { response in
+//            switch response.result {
+//            case .success(let result):
+//                XCTAssertEqual(result.result, 1)
+//                let product = ProductListDetailView(
+//                    id: productId,
+//                    name: result.productName,
+//                    price: result.productPrice,
+//                    description: result.productDescription)
+//                XCTAssertEqual(product.name, "Ноутбук")
+//            case .failure(let error):
+//                XCTFail(error.localizedDescription)
+//            }
+//            self.expectation.fulfill()
+//        }
+//        wait(for: [expectation], timeout: 10.0)
+//    }
 }

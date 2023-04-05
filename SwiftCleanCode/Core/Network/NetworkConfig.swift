@@ -8,7 +8,7 @@
 import Foundation
 
 final class NetworkConfig {
-    static let baseUrl = URL(string: "http://192.168.1.110:8080/")!
+    static let baseUrl = URL(string: "http://192.168.1.118:8080/")!
 //    static let baseUrl = URL(string: "https://swiftcleancodemock.onrender.com/")!
     static let loginPoint = "login"
     static let registerPoint = "register"
