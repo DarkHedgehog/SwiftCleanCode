@@ -15,7 +15,7 @@ struct ProductsList: View {
             List {
                 ForEach(viewModel.products) { product in
                     NavigationLink(destination: {
-                        ProductDetailView(viewModel: ProductDetailViewModel(productId: product.id))
+                        ProductListDetailView(viewModel: ProductDetailViewModel(productId: product.id))
                     }, label: {
                         HStack {
                             Text(product.name)
@@ -28,6 +28,7 @@ struct ProductsList: View {
         }
         .onAppear {
             viewModel.fetch()
+            AppAnalythics.shared.logEvent(.productListOpened)
         }
     }
 }

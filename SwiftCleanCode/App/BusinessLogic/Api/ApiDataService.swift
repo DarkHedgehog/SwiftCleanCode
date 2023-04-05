@@ -150,6 +150,28 @@ final class ApiDataService {
         }
     }
 
+    public func cartRemove(productId: UUID, _ completion: @escaping (Bool) -> Void) {
+        guard let userId = loggedProfile?.id else {
+            DispatchQueue.main.async {
+                completion(false)
+            }
+            return
+        }
+        cart.removeProductFromCart(userId: userId, productId: productId) { response in
+            switch response.result {
+            case .success(let result):
+                DispatchQueue.main.async {
+                    completion(true)
+                }
+            case .failure(let error):
+                print(error)
+                DispatchQueue.main.async {
+                    completion(false)
+                }
+            }
+        }
+    }
+
     public func cartPayForAll(_ completion: @escaping (UserCart?) -> Void) {
         guard let userId = loggedProfile?.id else {
             DispatchQueue.main.async {

@@ -16,7 +16,7 @@ struct BasketList: View {
                 List {
                     ForEach(viewModel.cart?.products ?? []) { product in
                         NavigationLink(destination: {
-                            ProductDetailView(viewModel: ProductDetailViewModel(productId: product.id))
+                            BasketListDetailView(viewModel: ProductDetailViewModel(productId: product.id))
                         }, label: {
                             HStack {
                                 Text(product.name)
@@ -40,8 +40,11 @@ struct BasketList: View {
                 }.padding()
 
                 Button {
-                    ApiDataService.shared.cartPayForAll { result in
-                        viewModel.fetch()
+                    if let cart = viewModel.cart {
+                        AppAnalythics.shared.logEvent(.cartPayAll(cart.userId, cart.totalCost))
+                        ApiDataService.shared.cartPayForAll { result in
+                            viewModel.fetch()
+                        }
                     }
                 } label: {
                     Text("Buy all")
