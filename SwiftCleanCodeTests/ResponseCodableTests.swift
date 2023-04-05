@@ -9,7 +9,6 @@ import XCTest
 import Alamofire
 @testable import SwiftCleanCode
 
-
 struct PostStub: Codable {
     let userId: Int
     let id: Int

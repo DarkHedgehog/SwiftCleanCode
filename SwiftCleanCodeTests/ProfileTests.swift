@@ -26,7 +26,6 @@ final class ProfileTests: XCTestCase {
 
         // When
         profile.registration(
-            userId: 123,
             userName: "Somebody",
             password: "mypassword",
             email: "some@some.ru",
@@ -52,7 +51,7 @@ final class ProfileTests: XCTestCase {
 
         // When
         profile.edit(
-            userId: 123,
+            userId: UUID(uuidString: "5d5816ff-95ff-446b-aab4-b674fe3fc905")!,
             userName: "Somebody",
             password: "mypassword",
             email: "some@some.ru",
